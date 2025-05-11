@@ -1,0 +1,39 @@
+ .Title {
+     width: 75px;
+     height: 75px;
+     display: grid;
+     place-content: center;
+     box-sizing: border-box;
+
+ }
+
+ .white-tile {
+     background-color: #ebecd0;
+ }
+
+ .black-tile {
+     background-color: #779556;
+ }
+
+ .white-tile,
+ .black-tile {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .chess-pieces {
+     background-size: contain;
+     background-repeat: no-repeat;
+     background-position: center;
+     width: 54px;
+     height: 54px;
+ }
+
+ .chess-pieces:hover {
+     cursor: grab;
+ }
+
+ .chess-pieces:active {
+     cursor: grabbing;
+ }

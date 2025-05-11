@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+}
+
+#app {
+  width: 100vw;
+  /* Chiếm toàn bộ chiều rộng màn hình */
+  height: 100vh;
+  /* Chiếm toàn bộ chiều cao màn hình */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #202020;
+}
