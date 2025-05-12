@@ -4,7 +4,6 @@ export const VERTICALAXIS = [1, 2, 3, 4, 5, 6, 7, 8];
 export const HORIZONTALAXIS = ["a", "b", "c", "d", "e", "f", "g", "h"];
 
 
-
 export interface Pieces {
     image: string,
     position: Position
