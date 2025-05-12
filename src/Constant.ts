@@ -9,7 +9,8 @@ export interface Pieces {
     position: Position
     type: PieceType,
     team: TeamType,
-    enPassant?: boolean
+    enPassant?: boolean,
+    possibleMoves?: Position[]
 }
 export interface Position {
     x: number,

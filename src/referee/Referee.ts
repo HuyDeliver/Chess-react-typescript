@@ -48,4 +48,23 @@ export default class Referee {
 
 
     }
+
+    getValidMoves = (piece: Pieces, boardState: Pieces[]): Position[] => {
+        switch (piece.type) {
+            case PieceType.PAWN:
+                return rules.getPossiblePawnMoves(piece, boardState)
+            case PieceType.KNIGHT:
+                return rules.getPossibleKnightMoves(piece, boardState)
+            case PieceType.BISHOP:
+                return rules.getPossibleBishopMoves(piece, boardState)
+            case PieceType.ROOK:
+                return rules.getPossibleRookMoves(piece, boardState)
+            case PieceType.QUEEN:
+                return rules.getPossibleQueenMoves(piece, boardState)
+            case PieceType.KING:
+                return rules.getPossibleKingMoves(piece, boardState)
+            default:
+                return []
+        }
+    }
 }
