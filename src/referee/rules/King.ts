@@ -1,7 +1,8 @@
+import type { Piece } from "../../components/models/Piece";
 import { TeamType, samePosition } from "../../Constant";
-import type { Pieces, Position } from "../../Constant";
+import type { Position } from "../../Constant";
 import { tileIsOccupied, tileIssEmtyOrOccupiedByOpponent, tileIsOccupiedByOpponent } from "./generalRules";
-export const kingMove = (initialPosition: Position, desiredPosition: Position, team: TeamType, boardState: Pieces[]): boolean => {
+export const kingMove = (initialPosition: Position, desiredPosition: Position, team: TeamType, boardState: Piece[]): boolean => {
     for (let i = 1; i < 2; i++) {
         let multiplierX = desiredPosition.x < initialPosition.x ? -1 : desiredPosition.x > initialPosition.x ? 1 : 0
         let multiplierY = desiredPosition.y < initialPosition.y ? -1 : desiredPosition.y > initialPosition.y ? 1 : 0
@@ -18,7 +19,7 @@ export const kingMove = (initialPosition: Position, desiredPosition: Position, t
     return false
 }
 
-export const getPossibleKingMoves = (king: Pieces, boardState: Pieces[]): Position[] => {
+export const getPossibleKingMoves = (king: Piece, boardState: Piece[]): Position[] => {
     const possibleMove: Position[] = []
     //top
     for (let i = 1; i < 2; i++) {

@@ -1,8 +1,9 @@
+import type { Piece } from "../../components/models/Piece";
 import { TeamType } from "../../Constant";
-import type { Pieces, Position } from "../../Constant";
+import type { Position } from "../../Constant";
 import { tileIsOccupiedByOpponent, tileIssEmtyOrOccupiedByOpponent } from "./generalRules";
 
-export const knightMove = (initialPosition: Position, desiredPosition: Position, team: TeamType, boardState: Pieces[]): boolean => {
+export const knightMove = (initialPosition: Position, desiredPosition: Position, team: TeamType, boardState: Piece[]): boolean => {
     for (let i = -1; i < 2; i += 2) {
         for (let j = -1; j < 2; j += 2) {
             //TOP AND Bottom
@@ -26,7 +27,7 @@ export const knightMove = (initialPosition: Position, desiredPosition: Position,
     return false
 }
 
-export const getPossibleKnightMoves = (knight: Pieces, boardState: Pieces[]): Position[] => {
+export const getPossibleKnightMoves = (knight: Piece, boardState: Piece[]): Position[] => {
     const possibleMoves: Position[] = []
     for (let i = -1; i < 2; i += 2) {
         for (let j = -1; j < 2; j += 2) {

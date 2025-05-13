@@ -10,10 +10,10 @@ export default function Tile({ image, number, highlight }: Props) {
     const className: string = ["Tile",
         number % 2 === 0 && "black-tile",
         number % 2 !== 0 && "white-tile",
-        highlight && "tile-highlight"].filter(Boolean).join(' ')
+        highlight && "tile-highlight", image && "chess-pieces-tile"].filter(Boolean).join(' ')
     return (
         <div className={className}>
-            {image && <div className="chess-pieces" style={{ backgroundImage: `url(${image})` }}></div>}
+            {image && <div style={{ backgroundImage: `url(${image})` }} className='chess-pieces'></div>}
         </div>
     )
 

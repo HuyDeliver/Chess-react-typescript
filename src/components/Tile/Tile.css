@@ -22,7 +22,7 @@
      align-items: center;
  }
 
- .chess-pieces {
+ .Tile .chess-pieces {
      background-size: contain;
      background-repeat: no-repeat;
      background-position: center;
@@ -30,10 +30,27 @@
      height: 54px;
  }
 
- .chess-pieces:hover {
+ .Tile .chess-pieces:hover {
      cursor: grab;
  }
 
- .chess-pieces:active {
+ .Tile .chess-pieces:active {
      cursor: grabbing;
+ }
+
+ .tile-highlight:not(.chess-pieces-tile)::before {
+     content: "";
+     width: 10px;
+     height: 10px;
+     background-color: rgba(0, 0, 0, 0.4);
+     border-radius: 50%;
+ }
+
+ .tile-highlight.chess-pieces-tile::before {
+     content: "";
+     position: absolute;
+     width: 75px;
+     height: 75px;
+     background-color: rgba(116, 115, 115, 0.4);
+     border-radius: 50%;
  }

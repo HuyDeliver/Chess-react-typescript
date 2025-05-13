@@ -1,8 +1,9 @@
+import type { Piece } from "../../components/models/Piece";
 import { samePosition, TeamType, PieceType } from "../../Constant";
-import type { Pieces, Position } from "../../Constant";
+import type { Position } from "../../Constant";
 import { tileIsOccupied, tileIsOccupiedByOpponent, tileIssEmtyOrOccupiedByOpponent } from "./generalRules";
 
-export const pawnMove = (initialPosition: Position, desiredPosition: Position, team: TeamType, boardState: Pieces[]): boolean => {
+export const pawnMove = (initialPosition: Position, desiredPosition: Position, team: TeamType, boardState: Piece[]): boolean => {
     const specialRow = team === TeamType.OUR ? 1 : 6;
     const pawnDirection = team === TeamType.OUR ? 1 : -1;
 
@@ -26,7 +27,7 @@ export const pawnMove = (initialPosition: Position, desiredPosition: Position, t
     return false
 }
 
-export const getPossiblePawnMoves = (pawn: Pieces, boardState: Pieces[]): Position[] => {
+export const getPossiblePawnMoves = (pawn: Piece, boardState: Piece[]): Position[] => {
     const possibleMoves: Position[] = []
     const specialRow = pawn.team === TeamType.OUR ? 1 : 6;
     const pawnDirection = pawn.team === TeamType.OUR ? 1 : -1

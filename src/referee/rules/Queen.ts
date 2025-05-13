@@ -1,7 +1,8 @@
+import type { Piece } from "../../components/models/Piece";
 import { TeamType, samePosition } from "../../Constant";
-import type { Pieces, Position } from "../../Constant";
+import type { Position } from "../../Constant";
 import { tileIsOccupied, tileIssEmtyOrOccupiedByOpponent, tileIsOccupiedByOpponent } from "./generalRules";
-export const queenMove = (initialPosition: Position, desiredPosition: Position, team: TeamType, boardState: Pieces[]): boolean => {
+export const queenMove = (initialPosition: Position, desiredPosition: Position, team: TeamType, boardState: Piece[]): boolean => {
     //cách 1
     // for (let i = 1; i < 8; i++) {
     //     //đi thẳng
@@ -111,7 +112,7 @@ export const queenMove = (initialPosition: Position, desiredPosition: Position, 
     }
     return false
 }
-export const getPossibleQueenMoves = (queen: Pieces, boardState: Pieces[]): Position[] => {
+export const getPossibleQueenMoves = (queen: Piece, boardState: Piece[]): Position[] => {
     const possibleMove: Position[] = []
     //top
     for (let i = 1; i < 8; i++) {

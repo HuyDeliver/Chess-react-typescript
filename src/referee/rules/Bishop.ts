@@ -1,7 +1,8 @@
+import type { Piece } from "../../components/models/Piece";
 import { PieceType, TeamType, samePosition } from "../../Constant";
-import type { Pieces, Position } from "../../Constant";
+import type { Position } from "../../Constant";
 import { tileIsOccupied, tileIsOccupiedByOpponent, tileIssEmtyOrOccupiedByOpponent } from "./generalRules";
-export const bishopMove = (initialPosition: Position, desiredPosition: Position, team: TeamType, boardState: Pieces[]): boolean => {
+export const bishopMove = (initialPosition: Position, desiredPosition: Position, team: TeamType, boardState: Piece[]): boolean => {
     for (let i = 1; i < 8; i++) {
         //top right
         if (desiredPosition.x > initialPosition.x && desiredPosition.y > initialPosition.y) {
@@ -68,7 +69,7 @@ export const bishopMove = (initialPosition: Position, desiredPosition: Position,
     return false
 }
 
-export const getPossibleBishopMoves = (bishop: Pieces, boardState: Pieces[]): Position[] => {
+export const getPossibleBishopMoves = (bishop: Piece, boardState: Piece[]): Position[] => {
     const possibleMove: Position[] = []
     //upper right
     for (let i = 1; i < 8; i++) {
